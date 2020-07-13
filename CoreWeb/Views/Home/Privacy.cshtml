@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<hr />
+<p>@Html.Raw(ViewBag.msg)</p>
+
+<div>
+    <a href="@Url.Action("Logout","Home")">登出</a>
+</div>

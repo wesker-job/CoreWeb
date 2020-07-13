@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "AjaxTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("", "", null, FormMethod.Post, true, new { name = "myForm" }))
+{
+    <button id="btnGo" type="button">click me to call ajax method</button>
+}
+
+<div id="result"></div>
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+@section scripts {
+    <script type="text/javascript">
+    let AjaxUrl = "@Url.Action("PostData","Home")";
+
+    $(document).ready(function () {
+        $.ajaxSetup({
+            statusCode: {
+                401: function () {
+                    window.location.href = "@Url.Action("Login","Home")?ReturnUrl=" + encodeURIComponent(window.location.href)
+                }
+            }
+        });
+
+        $("#btnGo").on("click", function () {
+            console.log("hello");
+            $.ajax({
+                url: AjaxUrl,
+                headers: { RequestVerificationToken: $("input[name='__RequestVerificationToken'").val() },
+                method: "post",
+                success: function (result) {
+                    console.log("success");
+                    $("#result").html(result);
+                }
+            });
+        });
+    });
+
+    </script>
+}
