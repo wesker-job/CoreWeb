@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreWeb.Data;
@@ -9,20 +8,16 @@ using CoreWeb.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using NLog.Extensions.Logging;
 
 namespace CoreWeb.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly MvcMovieContext _context;
-        //private readonly ILogger<MoviesController> _logger;
 
         public MoviesController(MvcMovieContext context)
         {
             _context = context;
-            //_logger = logger;, ILogger<MoviesController> logger
         }
 
         public async Task<IActionResult> Index(string movieGenre, string searchString)
@@ -146,7 +141,7 @@ namespace CoreWeb.Controllers
                     {
                         throw;
                     }
-                    return RedirectToAction(nameof(Index));
+                    //return RedirectToAction(nameof(Index));
                 }
             }
             return View(movie);

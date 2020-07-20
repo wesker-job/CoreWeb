@@ -1,0 +1,215 @@
+﻿@model CoreWeb.ViewModel.TodoItemsViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div>
+        <h3>Add</h3>
+        <form asp-action="Create">
+            <input type="text" id="addname" placeholder="New to-do" />
+            <input type="submit" value="add" />
+        </form>
+        @*<form action="javascript:void(0);" method="post" onsubmit="addItem()">
+            <input type="text" id="add-name" placeholder="New to-do" />
+            <input type="submit" value="add" />
+        </form>*@
+    </div>
+<div id="editForm">
+    <h3>Edit</h3>
+    @*<form action="javascript:void(0);" onsubmit="updateItem()">*@
+    <form  asp-action="Edit">
+        <input type="hidden" id="edit_id" />
+        <input type="hidden" id="edit_href" />
+        <input type="checkbox" id="edit_isComplete" />
+        <input type="text" id="edit_name" />
+        <input type="submit" value="Save" />
+        @*<a onclick="closeInput()" aria-label="Close">&#10006;</a>*@
+    </form>
+</div>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>Is Complete?</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody id="todos">
+        @foreach (var item in Model.todoItems)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.IsComplete)</td>
+            <td>@Html.DisplayFor(modelItem => @item.Name)</td>
+            <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+        </tr>
+        }
+        </tbody>
+
+</table>
+
+@section scripts {
+    <script type="text/javascript">
+        $().ready(function () {
+            $("#todos a").click(function (evt) {
+                evt.preventDefault();
+                if ($(this).text() == "Edit") {
+                    let href = $(this).attr("href");
+                    var hrefs = href.split('/');
+                    
+                    var trline = $(this).closest("tr").find("td");
+                    $("#edit_id").val(hrefs[3]);
+                    $("#edit_href").val(hrefs[1] + "/" + hrefs[2]);
+                    $("#edit_name").val(trline.eq(1).html());
+                    $("#edit_isComplete").prop("checked", trline.eq(0).find("input:checkbox").is(":checked"));
+                }
+                else if ($(this).text() == "Delete") {
+                    //Todo
+                }
+            });
+
+            //$("#").click(function (evt) {
+            //    evt.preventDefault();
+
+            //    var editData = {};
+            //    editData.id = $("#edit-id").val();
+            //    editData.name = $("#edit-name").val();
+            //    editData.isComplete = $("#edit-isComplete").is(":checked");
+
+            //    $.post($("#edit-href").val(), editData, function (data, status) {
+            //        alert("Data: " + data + "\nStatus: " + status);
+            //    });
+            //});
+
+        });
+
+        const uri = 'https://localhost:44377/api/TodoItems';
+        let todos = [];
+
+        function getItems() {
+            fetch(uri)
+                .then(response => response.json())
+                .then(data => _displayItems(data))
+                .catch(error => console.error('Unable to get items.', error))
+        }
+
+        function addItem() {
+            const addNameTextbox = document.getElementById('add-name');
+
+            const item = {
+                isComplete: false,
+                name: addNameTextbox.value.trim()
+            };
+
+            fetch(uri, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            })
+                .then(response => response.json())
+                .then(() => {
+                    getItems();
+                    addNameTextbox.value = '';
+                })
+                .catch(error => console.error('Unable to add item.', error));
+        }
+
+
+        function deleteItem(id) {
+            fetch(`${uri}/${id}`, {
+                method: 'DELETE'
+            })
+                .then(() => getItems())
+                .catch(error => console.err('Unable to delete Item.', error));
+        }
+
+        function displayEditForm(id) {
+            const item = todos.find(item => item.id === id);
+
+            $("#edit-name").val(item.name);
+            $('#edit-id').val(item.id);
+            $("#edit-isComplete").checked(item.isComplete);
+            //$('#editForm').style.display = 'block';
+        }
+
+        function updateItem() {
+            const itemId = document.getElementById('edit-id').value;
+            const item = {
+                id: parseInt(itemId, 10),
+                isComplete: document.getElementById('edit-isComplete').checked,
+                name: document.getElementById('edit-name').value.trim()
+            };
+
+            fetch(`${uri}/${itemId}`, {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            })
+                .then(() => getItems())
+                .catch(error => console.error('Unable to update item.', error));
+
+            closeInput();
+
+            return false;
+        }
+
+        function closeInput() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+
+        function _displayCount(itemCount) {
+            const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+
+            document.getElementById('counter').innerText = `${itemCount} ${name}`;
+        }
+
+        function _displayItems(data) {
+            const tBody = document.getElementById('todos');
+            tBody.innerHTML = '';
+
+            _displayCount(data.length);
+
+            const button = document.createElement('button');
+
+            data.forEach(item => {
+                let isCompleteCheckbox = document.createElement('input');
+                isCompleteCheckbox.type = 'checkbox';
+                isCompleteCheckbox.disabled = true;
+                isCompleteCheckbox.checked = item.isComplete;
+
+                let editButton = button.cloneNode(false);
+                editButton.innerText = 'Edit';
+                editButton.setAttribute('onclick', `displayEditForm(${item.id})`);
+
+                let deleteButton = button.cloneNode(false);
+                deleteButton.innerText = 'Delete';
+                deleteButton.setAttribute('onclick', `deleteItem(${item.id})`);
+
+                let tr = tBody.insertRow();
+
+                let td1 = tr.insertCell(0);
+                td1.appendChild(isCompleteCheckbox);
+
+                let td2 = tr.insertCell(1);
+                let textNode = document.createTextNode(item.name);
+                td2.appendChild(textNode);
+
+                let td3 = tr.insertCell(2);
+                td3.appendChild(editButton);
+
+                let td4 = tr.insertCell(3);
+                td4.appendChild(deleteButton);
+            });
+
+            todos = data;
+        }
+
+    </script>
+}

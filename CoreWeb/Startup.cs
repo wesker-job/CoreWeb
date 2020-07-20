@@ -66,6 +66,7 @@ namespace CoreWeb
                 app.UseExceptionHandler("/Home/Error");
             }
             //app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();

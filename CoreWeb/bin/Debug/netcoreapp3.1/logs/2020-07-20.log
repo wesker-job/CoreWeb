@@ -1,0 +1,74 @@
+2020-07-20 10:30:10.7907 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 10:30:10.8544 INFO Hosting environment: Development
+2020-07-20 10:30:10.8600 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 10:30:11.2514 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 10:39:19.2633 INFO .net core api 測試
+2020-07-20 10:39:20.0989 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 10:41:46.6018 INFO .net core api 測試
+2020-07-20 10:41:46.8989 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 10:41:49.5697 INFO .net core api 測試
+2020-07-20 10:41:49.5961 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 10:41:55.4742 INFO .net core api 測試
+2020-07-20 10:41:55.7368 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 10:47:00.1489 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:47:13.0912 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:47:57.4964 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:48:35.4962 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:49:10.1791 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:50:15.9924 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:54:22.7484 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:55:23.7447 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:55:46.8034 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:56:18.9730 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:56:49.6057 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 10:56:49.6472 INFO Hosting environment: Development
+2020-07-20 10:56:49.6537 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 10:56:55.7440 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 10:57:10.1131 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 11:01:27.5410 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 11:01:27.5881 INFO Hosting environment: Development
+2020-07-20 11:01:27.5881 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 11:01:29.8662 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 11:01:35.8419 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 11:01:38.0413 INFO .net core api 測試
+2020-07-20 11:01:38.1318 ERROR An unhandled exception has occurred while executing the request.
+2020-07-20 11:01:39.6467 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 11:03:38.4214 INFO .net core api 測試
+2020-07-20 11:04:11.3406 INFO .net core api 測試
+2020-07-20 11:04:37.7686 INFO .net core api 測試
+2020-07-20 11:05:24.4902 INFO .net core api 測試
+2020-07-20 11:37:10.3364 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 11:37:10.3951 INFO Hosting environment: Development
+2020-07-20 11:37:10.3951 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 11:38:21.4681 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 11:38:21.5120 INFO Hosting environment: Development
+2020-07-20 11:38:21.5160 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 11:38:41.5547 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-20 13:23:25.1729 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 13:23:25.2127 INFO Hosting environment: Development
+2020-07-20 13:23:25.2127 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 13:29:35.7507 INFO .net core api 測試
+2020-07-20 15:06:11.1012 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 15:06:11.1868 INFO Hosting environment: Development
+2020-07-20 15:06:11.1868 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 15:26:58.6117 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 15:26:58.6584 INFO Hosting environment: Development
+2020-07-20 15:26:58.6584 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 15:33:37.0013 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 15:33:37.0474 INFO Hosting environment: Development
+2020-07-20 15:33:37.0474 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 15:34:23.4564 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 15:34:23.4954 INFO Hosting environment: Development
+2020-07-20 15:34:23.5061 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 15:51:54.9995 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 15:51:55.0508 INFO Hosting environment: Development
+2020-07-20 15:51:55.0508 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 16:50:49.9435 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 16:50:49.9943 INFO Hosting environment: Development
+2020-07-20 16:50:49.9943 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 16:51:32.4172 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 16:51:32.4609 INFO Hosting environment: Development
+2020-07-20 16:51:32.4609 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-20 16:54:58.6684 INFO Application started. Press Ctrl+C to shut down.
+2020-07-20 16:54:58.7250 INFO Hosting environment: Development
+2020-07-20 16:54:58.7250 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb

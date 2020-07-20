@@ -14,6 +14,7 @@ namespace CoreWeb
     {
         public static void Main(string[] args)
         {
+            //NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -21,6 +22,8 @@ namespace CoreWeb
             Host.CreateDefaultBuilder(args)
             .ConfigureLogging((hostingContext, logging) =>
             {
+                //logging.ClearProviders();
+                //logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                 logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
                 logging.AddDebug();
                 logging.AddNLog();

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +8,6 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authentication;
-using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Authorization;
 using System.Text;
 
@@ -23,6 +20,8 @@ namespace CoreWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration config;
+        public string userAccount = "user";
+        public string pdstr = "abc123";
 
         public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
@@ -60,6 +59,8 @@ namespace CoreWeb.Controllers
         [AllowAnonymous]
         public IActionResult Login()
         {
+            ViewBag.id = userAccount;
+            ViewBag.pd = pdstr;
             return View();
         }
 
@@ -67,10 +68,12 @@ namespace CoreWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string userid, string pd, string returnUrl)
         {   
-            bool a = ModelState.IsValid;
-            if (!userid.Equals("user") && !pd.Equals("Abc123"))
+            //bool a = ModelState.IsValid;
+            if (!userid.Equals(userAccount) && !pd.Equals(pdstr))
             {
                 ViewBag.errMsg = "輸入錯誤";
+                ViewBag.id = userAccount;
+                ViewBag.pd = pdstr;
                 return View();
             }
 
