@@ -50,7 +50,7 @@ namespace CoreWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(long edit_id, string edit_name, bool edit_isComplete)
+        public IActionResult Edit(long edit_id, string edit_name, string edit_isComplete)
         {
             if (!ModelState.IsValid)
             {
@@ -60,13 +60,13 @@ namespace CoreWeb.Controllers
             TodoItem todoItem = new TodoItem();
             todoItem.Id = edit_id;
             todoItem.Name = edit_name;
-            todoItem.IsComplete = edit_isComplete;
+            todoItem.IsComplete = string.IsNullOrEmpty(edit_isComplete) ? false : true;
 
             using HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(webapiUrl);
             string data = JsonConvert.SerializeObject(todoItem);
             var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-            HttpResponseMessage response = client.PutAsync($"/api/course/{todoItem.Id}", content).Result;
+            HttpResponseMessage response = client.PutAsync($"/api/TodoItems/{todoItem.Id}", content).Result;
             return RedirectToAction("Index");
         }
     }

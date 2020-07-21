@@ -6,7 +6,7 @@
     <div>
         <h3>Add</h3>
         <form asp-action="Create">
-            <input type="text" id="addname" placeholder="New to-do" />
+            <input type="text" id="addname" name="addname" placeholder="New to-do" />
             <input type="submit" value="add" />
         </form>
         @*<form action="javascript:void(0);" method="post" onsubmit="addItem()">
@@ -18,10 +18,10 @@
     <h3>Edit</h3>
     @*<form action="javascript:void(0);" onsubmit="updateItem()">*@
     <form  asp-action="Edit">
-        <input type="hidden" id="edit_id" />
-        <input type="hidden" id="edit_href" />
-        <input type="checkbox" id="edit_isComplete" />
-        <input type="text" id="edit_name" />
+        <input type="hidden" id="edit_id" name="edit_id" />
+        <input type="hidden" id="edit_href" name="edit_href" />
+        <input type="checkbox" id="edit_isComplete" name="edit_isComplete" />
+        <input type="text" id="edit_name" name="edit_name" />
         <input type="submit" value="Save" />
         @*<a onclick="closeInput()" aria-label="Close">&#10006;</a>*@
     </form>
