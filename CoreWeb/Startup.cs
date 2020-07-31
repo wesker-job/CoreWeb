@@ -34,7 +34,7 @@ namespace CoreWeb
 
             //runtime階段，可以修改razor page
             services.AddRazorPages().AddRazorRuntimeCompilation();
-            services.AddMvc().AddRazorRuntimeCompilation();
+            //services.AddMvc().AddRazorRuntimeCompilation();
 
             string connStr = Configuration.GetConnectionString("MvcMovieContext");
             services.AddDbContext<MvcMovieContext>(Option => Option.UseSqlServer(connStr));

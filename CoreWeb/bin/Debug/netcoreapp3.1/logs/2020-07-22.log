@@ -1,0 +1,13 @@
+2020-07-22 10:28:55.1368 INFO Application started. Press Ctrl+C to shut down.
+2020-07-22 10:28:55.1841 INFO Hosting environment: Development
+2020-07-22 10:28:55.1841 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-22 10:43:10.6319 INFO Application started. Press Ctrl+C to shut down.
+2020-07-22 10:43:10.6859 INFO Hosting environment: Development
+2020-07-22 10:43:10.6859 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-22 15:33:07.1954 INFO Application started. Press Ctrl+C to shut down.
+2020-07-22 15:33:07.4002 INFO Hosting environment: Development
+2020-07-22 15:33:07.4237 INFO Content root path: C:\Users\acer\source\repos\CoreWeb\CoreWeb
+2020-07-22 15:33:54.7430 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-22 15:33:55.9772 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-22 15:34:01.1827 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.
+2020-07-22 15:34:18.3469 WARN The 'Cache-Control' and 'Pragma' headers have been overridden and set to 'no-cache, no-store' and 'no-cache' respectively to prevent caching of this response. Any response that uses antiforgery should not be cached.

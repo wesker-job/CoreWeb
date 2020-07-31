@@ -429,3 +429,4 @@ C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Release\netcoreapp3.1\NLog.config
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Release\netcoreapp3.1\NLog.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Release\netcoreapp3.1\NLog.Extensions.Logging.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Release\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Release\netcoreapp3.1\Razor\Views\TodoItem\Index.cshtml.g.cs

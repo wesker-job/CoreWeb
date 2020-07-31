@@ -428,5 +428,5 @@ C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\staticwebasse
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.pdb
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.genruntimeconfig.cache
-C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.csprojAssemblyReference.cache
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\TodoItem\Index.cshtml.g.cs
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.csprojAssemblyReference.cache

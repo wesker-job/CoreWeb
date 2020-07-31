@@ -9,23 +9,9 @@
             <input type="text" id="addname" name="addname" placeholder="New to-do" />
             <input type="submit" value="add" />
         </form>
-        @*<form action="javascript:void(0);" method="post" onsubmit="addItem()">
-            <input type="text" id="add-name" placeholder="New to-do" />
-            <input type="submit" value="add" />
-        </form>*@
+
     </div>
-<div id="editForm">
-    <h3>Edit</h3>
-    @*<form action="javascript:void(0);" onsubmit="updateItem()">*@
-    <form  asp-action="Edit">
-        <input type="hidden" id="edit_id" name="edit_id" />
-        <input type="hidden" id="edit_href" name="edit_href" />
-        <input type="checkbox" id="edit_isComplete" name="edit_isComplete" />
-        <input type="text" id="edit_name" name="edit_name" />
-        <input type="submit" value="Save" />
-        @*<a onclick="closeInput()" aria-label="Close">&#10006;</a>*@
-    </form>
-</div>
+
 <hr />
 
 <table class="table">
@@ -54,17 +40,22 @@
         $().ready(function () {
             $("#todos a").click(function (evt) {
                 evt.preventDefault();
+                let href = $(this).attr("href");
+                var hrefs = href.split('/');
+                var trline = $(this).closest("tr").find("td");
+
                 if ($(this).text() == "Edit") {
-                    let href = $(this).attr("href");
-                    var hrefs = href.split('/');
-                    
-                    var trline = $(this).closest("tr").find("td");
                     $("#edit_id").val(hrefs[3]);
                     $("#edit_href").val(hrefs[1] + "/" + hrefs[2]);
                     $("#edit_name").val(trline.eq(1).html());
                     $("#edit_isComplete").prop("checked", trline.eq(0).find("input:checkbox").is(":checked"));
                 }
                 else if ($(this).text() == "Delete") {
+                    if (confirm("確定要刪除編號" + hrefs[3] + "(" + trline.eq(1).html() + ")嗎?")) {
+                        $("#del_id").val(hrefs[3]);
+                        console.log($("#del_id").val());
+                        $("#delSave").click();
+                    }
                     //Todo
                 }
             });

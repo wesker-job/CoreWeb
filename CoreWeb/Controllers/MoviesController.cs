@@ -22,6 +22,11 @@ namespace CoreWeb.Controllers
 
         public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
+            if (this.TempData.ContainsKey("StateError"))
+            {
+                ViewData["StateError"] = TempData["StateError"];
+            }
+
             try
             {
                 IQueryable<string> genreQuery = _context.Movies.Select(c => c.Genre).Distinct();
@@ -99,6 +104,8 @@ namespace CoreWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateConfirmed(Movie movie)
         {
+            Dictionary<string, string[]> ModelStateErrors = new Dictionary<string, string[]>();
+
             if (ModelState.IsValid)
             {
                 try
@@ -111,7 +118,13 @@ namespace CoreWeb.Controllers
                     return Content(ex.Message.ToString());
                 }
             }
+            else
+            {
+                ModelStateErrors = ModelState.Where(x => x.Value.Errors.Count > 0)
+                    .ToDictionary(k => k.Key, k => k.Value.Errors.Select(e => e.ErrorMessage).ToArray());
+            }
 
+            TempData["StateError"] = ModelStateErrors;
             return RedirectToAction("Index");
         }
 

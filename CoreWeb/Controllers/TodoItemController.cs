@@ -12,20 +12,32 @@ namespace CoreWeb.Controllers
 {
     public class TodoItemController : Controller
     {
-        public string webapiUrl = "https://localhost:44377/";
+        public static string webapiUrl { get; set; }
+        
         public IActionResult Index()
         {
-            TodoItemsViewModel data = new TodoItemsViewModel();
-            data.todoItems = new List<TodoItem>();
-            using (HttpClient client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(webapiUrl);
-                HttpResponseMessage response = client.GetAsync("/api/TodoItems").Result;
-                string result = response.Content.ReadAsStringAsync().Result;
-                data.todoItems = JsonConvert.DeserializeObject<List<TodoItem>>(result);
-            }
+            webapiUrl = "https://localhost:44377/";
+            //"http://172.17.0.2/";
+            //"https://localhost:44377/";
 
-            return View(data);
+            try
+            {
+                TodoItemsViewModel data = new TodoItemsViewModel();
+                data.todoItems = new List<TodoItem>();
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(webapiUrl);
+                    HttpResponseMessage response = client.GetAsync("/api/TodoItems").Result;
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    data.todoItems = JsonConvert.DeserializeObject<List<TodoItem>>(result);
+                }
+
+                return View(data);
+            }
+            catch(Exception ex)
+            {
+                return Content(ex.Message.ToString());
+            }
         }
 
         [HttpPost]
@@ -67,6 +79,20 @@ namespace CoreWeb.Controllers
             string data = JsonConvert.SerializeObject(todoItem);
             var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
             HttpResponseMessage response = client.PutAsync($"/api/TodoItems/{todoItem.Id}", content).Result;
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(long del_id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("index");
+            }
+
+            using HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(webapiUrl);
+            HttpResponseMessage response = client.DeleteAsync($"/api/TodoItems/{del_id}").Result;
             return RedirectToAction("Index");
         }
     }
