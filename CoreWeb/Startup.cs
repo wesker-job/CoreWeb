@@ -1,16 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CoreWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using CoreWebService;
+using DataAccess;
 //using Microsoft.CodeAnalysis.Options;
 //using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 //using Westwind.AspNetCore.LiveReload;
@@ -31,14 +29,14 @@ namespace CoreWeb
         {
             services.AddControllersWithViews();
             services.AddMvc();
-
+            
             //runtime階段，可以修改razor page
             services.AddRazorPages().AddRazorRuntimeCompilation();
             //services.AddMvc().AddRazorRuntimeCompilation();
 
-            string connStr = Configuration.GetConnectionString("MvcMovieContext");
-            services.AddDbContext<MvcMovieContext>(Option => Option.UseSqlServer(connStr));
-
+            //string connStr = Configuration.GetConnectionString("MvcMovieContext");
+            //services.AddDbContext<MvcMovieContext>(Option => Option.UseSqlServer(connStr));
+            
             double LoginExpireMinute = Configuration.GetValue<double>("LoginExpireMinute");
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
                 option => {
@@ -47,11 +45,19 @@ namespace CoreWeb
                     option.LogoutPath = new PathString(Configuration.GetValue<string>("LogoutPath"));
                     option.ExpireTimeSpan = TimeSpan.FromMinutes(LoginExpireMinute);
                 });
+
+            services.AddDbContext<CoreDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
+            
+            services.AddScoped<IMovieRepository, MovieRepository>();
+
+            services.AddScoped<IMoviesService, MoviesService>();
+            //services.AddScoped<IActorService, ActorService>();
+
             //services.AddDbContext<MvcMovieContext>(optionsBuilder =>
             //{
             //    optionsBuilder.UseSqlServer(connStr);
             //});
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

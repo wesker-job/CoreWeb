@@ -393,6 +393,13 @@ C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\runtimes\win-
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\CoreWebService.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\CoreWebService.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.csprojAssemblyReference.cache
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.AssemblyInfoInputs.cache
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.AssemblyInfo.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.csproj.CoreCompileInputs.cache
@@ -417,6 +424,7 @@ C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\M
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\TodoItem\Index.cshtml.g.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.RazorTargetAssemblyInfo.cache
@@ -428,5 +436,3 @@ C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\staticwebasse
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.dll
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.pdb
 C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.genruntimeconfig.cache
-C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\Razor\Views\TodoItem\Index.cshtml.g.cs
-C:\Users\acer\source\repos\CoreWeb\CoreWeb\obj\Debug\netcoreapp3.1\CoreWeb.csprojAssemblyReference.cache

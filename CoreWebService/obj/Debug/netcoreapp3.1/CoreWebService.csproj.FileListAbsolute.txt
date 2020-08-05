@@ -1,0 +1,14 @@
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\CoreWebService.deps.json
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\CoreWebService.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\CoreWebService.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.csprojAssemblyReference.cache
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.AssemblyInfoInputs.cache
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.AssemblyInfo.cs
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.csproj.CopyComplete
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.dll
+C:\Users\acer\source\repos\CoreWeb\CoreWebService\obj\Debug\netcoreapp3.1\CoreWebService.pdb

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreWeb.Data;
-using CoreWeb.Models;
 using CoreWeb.ViewModel;
+using CoreWebService;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,11 +13,13 @@ namespace CoreWeb.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly MvcMovieContext _context;
+        private readonly IMoviesService _movieServie;
+        //private readonly IActorService _actorService;
 
-        public MoviesController(MvcMovieContext context)
+        public MoviesController( IMoviesService moviesService)
         {
-            _context = context;
+            _movieServie = moviesService;
+            //_actorService = actorService;
         }
 
         public async Task<IActionResult> Index(string movieGenre, string searchString)
@@ -29,18 +31,9 @@ namespace CoreWeb.Controllers
 
             try
             {
-                IQueryable<string> genreQuery = _context.Movies.Select(c => c.Genre).Distinct();
-                IQueryable<Movie> movies = _context.Movies;
-                
-                if (!string.IsNullOrEmpty(searchString))
-                {
-                    movies = movies.Where(s => s.Title.Contains(searchString));
-                }
-
-                if (!string.IsNullOrEmpty(movieGenre))
-                {
-                    movies = movies.Where(c => c.Genre == movieGenre);
-                }
+                IQueryable<string> genreQuery = _movieServie.Get().Select(c => c.Genre).Distinct();
+                //IQueryable<Movie> movies = _context.Movies;
+                IQueryable<Movie> movies = _movieServie.GetParam(movieGenre, searchString);
 
                 var movieGenreVM = new MovieGenreViewModel()
                 {
@@ -65,7 +58,7 @@ namespace CoreWeb.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
+            var movie = await _movieServie.GetById(id.Value);
 
             if (movie == null)
             {
@@ -82,7 +75,7 @@ namespace CoreWeb.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movies.FindAsync(id);
+            var movie = await _movieServie.GetById(id.Value);
 
             if (movie == null)
             {
@@ -110,10 +103,11 @@ namespace CoreWeb.Controllers
             {
                 try
                 {
-                    _context.Add(movie);
-                    await _context.SaveChangesAsync();
+                    //_context.Add(movie);
+                    _movieServie.Add(movie);
+                    await _movieServie.Save();
                 }
-                catch(DbUpdateConcurrencyException ex)
+                catch (DbUpdateConcurrencyException ex)
                 {
                     return Content(ex.Message.ToString());
                 }
@@ -141,8 +135,10 @@ namespace CoreWeb.Controllers
             {
                 try
                 {
-                    _context.Update(movie);
-                    await _context.SaveChangesAsync();
+                    //_context.Update(movie);
+                    //await _context.SaveChangesAsync();
+                    _movieServie.Update(movie);
+                    await _movieServie.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -167,7 +163,8 @@ namespace CoreWeb.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
+            //var movie = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
+            Movie movie = await _movieServie.GetById(id.Value);
 
             if (movie == null)
             {
@@ -181,15 +178,20 @@ namespace CoreWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _context.Movies.FindAsync(id);
-            _context.Movies.Remove(movie);
-            await _context.SaveChangesAsync();
+            //var movie = await _context.Movies.FindAsync(id);
+            //_context.Movies.Remove(movie);
+            //await _context.SaveChangesAsync();
+            Movie movie = await _movieServie.GetById(id);
+            _movieServie.Remove(movie);
+            await _movieServie.Save();
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool MovieExists(int id)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _movieServie.Get().Any(x => x.Id == id);
+            //return _context.Movies.Any(e => e.Id == id);
         }
     }
 }
